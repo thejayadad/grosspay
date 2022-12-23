@@ -14,6 +14,7 @@ public class Change {
         double nickle = .05;
         double dime = .10;
         double quarter = .25;
+        System.out.println("***Can you enter enough change to total $1.00?***");
         System.out.println("How many pennies: ");
         totalPennies = scan.nextInt();
         System.out.println("How many nickles: ");
@@ -22,19 +23,18 @@ public class Change {
         totalDimes = scan.nextInt();
         System.out.println("How many quarters: ");
         totalQuarters = scan.nextInt();
-        scan.close();
         double total = (totalPennies * penny) + (totalNickles * nickle) + (totalDimes * dime) + (totalQuarters * quarter);
         if(total < dollar){
-            double amountshort = dollar - total;
-            System.out.println("Sorry but you were short " + String.format("%.2f",amountshort));
-
+            double amountShort = dollar - total;
+            System.out.println("Sorry but you were short: " + String.format("%.2f", amountShort));
         } else if(total > dollar){
             double amountOver = total - dollar;
-            System.out.println("Sorry but you were over by " + String.format("%.2f",amountOver));
-
-        } else{
-            System.out.println("Great job, your total hit $1.00.");
+            System.out.println("Sorry but you were over by: " + String.format("%.2f", amountOver));
+        } else {
+            System.out.println("Great job, your total is $1.00");
         }
+
+
 
     }
 }
